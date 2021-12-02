@@ -40,7 +40,9 @@ jobs:
 
     - name: terraform-compliance
       uses: terraform-compliance/github_action@main
-      run: terraform-compliance -p ./plan.out.json -f ../test/test.features
+      with:
+        plan: plan.out.json
+        features: ssh://git@github.com:abbyli-88/code_test.git
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
