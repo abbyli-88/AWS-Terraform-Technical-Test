@@ -36,7 +36,13 @@ jobs:
       continue-on-error: true
 
     - name: Terraform Plan
-      run: terraform plan
+      run: terraform plan -out=plan.out && terraform show -json plan.out > plan.out.json
+
+    - name: terraform-compliance
+      uses: terraform-compliance/github_action@main
+      with:
+        plan: plan.out.json
+        features: ssh://git@github.com:abbyli-88/code_test.git
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
