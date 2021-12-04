@@ -54,14 +54,9 @@ jobs:
           </details>
 
           *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
-
-          github.issues.createComment({
-            owner: context.repo.owner,
-            echo(owner)
-            repo: context.repo.repo,
-            issue_number: context.issue.number,
-            body: output
-          })
+          if github.event_name == 'pull_request'
+          then github.issues.createComment({owner: context.repo.owner,repo: context.repo.repo,issue_number: context.issue.number,body: output})
+          fi
 
     - name: Terraform Plan Status
       if: steps.plan.outcome == 'failure'
