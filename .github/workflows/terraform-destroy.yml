@@ -1,14 +1,13 @@
 name: Cleanup
 
 jobs:
-  destroy_workspace:
+  issue_parser:
     runs-on: ubuntu-latest
-    name: Destroy terraform workspace
+    name: Terraform destroy
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: terraform destroy
-        uses: dflook/terraform-destroy@v1
+      - name: Terraform destroy
+        env:
+        uses: daniyalj/terraform-destroy-actions@v3
         with:
-          workspace: "code_test_workspace"
+          org_name: 'code_test'
+          repo_name: 'code_test'
