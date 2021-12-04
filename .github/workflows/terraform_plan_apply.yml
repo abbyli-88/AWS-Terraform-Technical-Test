@@ -1,4 +1,4 @@
-name: 'Terraform CI/CD Pipeline-- terraform plan and terraform apply'
+name: 'terraform plan and terraform apply'
 on:
   push:
     branches:
