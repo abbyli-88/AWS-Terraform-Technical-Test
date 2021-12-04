@@ -3,6 +3,6 @@ output "instance_id" {
 }
 
 output "key_pairs_map" {
-  value = zipmap(module.key-pair.*.public_key,module.key-pair.*.private_key)
+  value     = zipmap(module.key-pair.*.public_key, module.key-pair.*.private_key)
   sensitive = true
 }
