@@ -7,7 +7,6 @@ jobs:
     name: Terraform destroy
     steps:
       - name: Terraform destroy
-        env:
         uses: daniyalj/terraform-destroy-actions@v3
         with:
           org_name: 'code_test'

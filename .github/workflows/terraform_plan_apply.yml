@@ -1,4 +1,4 @@
-name: 'terraform plan and terraform apply'
+name: 'terraform plan and apply'
 on:
   push:
     branches:
