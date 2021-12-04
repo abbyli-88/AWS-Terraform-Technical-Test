@@ -1,8 +1,12 @@
-#Provision AWS ec2 instance 
+#integrate Terraform Cloud with GitHub Actions to automate the infrastructure provisioning of AWS EC2.
 
 
 provisioned three ec2 by existed modules using terraform cloud as remote backend. and automated Terraform with CI/CD pipeline in Git Action.
 
 ##work flow
-Set up a complete GitHub Actions workflow to run terraform script automatically for every pull request and push on main branch.
-![img_2.png](img_2.png)
+
+![](img/img1.png)
+
+###This workflow will :
+1.generate a plan for every pull requests ,and push 
+2.Check if the input is formatted
