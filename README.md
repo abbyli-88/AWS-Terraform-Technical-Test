@@ -2,7 +2,7 @@
 
 provisioned three ec2 by existed modules using terraform cloud as remote backend. and automated Terraform with CI/CD pipeline in Git Action
 ## Infrastructure
-![img.png](img/img.png)
+![img.png](img/img5.png)
 
 ## Summary
 
