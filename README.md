@@ -4,7 +4,7 @@
 
 provisioned three ec2 by existed modules using terraform cloud as remote backend. and automated Terraform with CI/CD pipeline in Git Action.
 ## Infrastructure
-
+![img.png](img/img.png)
 
 ## Summary
 
@@ -49,19 +49,31 @@ you can also [login terraform cloud](https://app.terraform.io/session) through t
 username: anonymous_public
 password: Qwer_1234_!
 ```
+![img1.png](img/img1.png)
 In the end,cleanup all the resources by
 ```sh
 terraform destroy
 ```
 ## Pipeline Flow
+![img.png](img/img2.png)
 
-| pipeline name | description |
+.github/workflows/terraform_plan_apply.yml :
+1. generate format test, a plan and status test report(success or failure of the steps in pipeline) for every pull request automatically.
+2. generate all the steps mentioned above and if there is no error in terraform plan, create all the resources in the terraform workspace for meger and push in main branch automatically.
+![img.png](img/img3.png)
+
+.github/workflows/terraform_destroy.yml :
+delete all the resources in the work space by manually trigger terraform-destroy pipeline.
+![img_1.png](img/img_1.png)
+## Requirements
+
+|  name | Version |
 | ------ | ------|
-| terraform_plan_apply | 1. generate format test, a plan and status test report(success or failure of the steps in pipeline) for every pull request automatically.2.generate all the steps mentioned above and if there is no error in terraform plan, create all the resources in the terraform workspace for meger and push in main branch automatically. |
-| terraform_destroy | delete all the resources in the work space by manually trigger terraform-destroy pipeline. |
+|  terraform | 	>= 1.0 |
+|  aws | >= 3.48.0 |
 
-
-
+## Author
+Abby Li | abbyLi_DevOps@outlook.com
 
 
 
