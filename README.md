@@ -55,14 +55,15 @@ terraform destroy
 ## Pipeline Flow
 ![img.png](img/img2.png)
 
-###.github/workflows/terraform_plan_apply.yml :
+.github/workflows/terraform_plan_apply.yml :
 1. generate format test, a plan and status test report(success or failure of the steps in pipeline) for every pull request automatically.
 2. generate all the steps mentioned above and if there is no error in terraform plan, create all the resources in the terraform workspace for meger and push in main branch automatically.
 ![img.png](img/img3.png)
 
-###.github/workflows/terraform_destroy.yml :
+.github/workflows/terraform_destroy.yml :
 delete all the resources in the work space by manually trigger terraform-destroy pipeline.
 ![img_1.png](img/img_1.png)
+
 ## Requirements
 
 |  name | Version |
