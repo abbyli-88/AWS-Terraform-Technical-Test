@@ -33,7 +33,6 @@ terraform login
 ```
 Enter "yes " and input this token for the prompt, this is API token for the organization in terraform cloud:
 ```sh
-AYT4KObjew9mwA.atlasv1.VkoDu6zCvqBJIGemRaNaMvaGfTWCxuExekb3l0aOdv6BrfxysHly9kb1cZQICPSS9TA
 ```
 Execute following terraform CMD:
 ```sh
